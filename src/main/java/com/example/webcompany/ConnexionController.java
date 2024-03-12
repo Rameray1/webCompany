@@ -13,13 +13,13 @@ public class ConnexionController {
     @GetMapping("/connexion")
     public String connexionForm(Model model) {
         model.addAttribute("connexion", new Connexion());
-        return "connexion";
+        return "connexion.html";
     }
 
     @PostMapping("/connexion")
     public String connexionSubmit(@ModelAttribute Connexion connexion, Model model) {
         model.addAttribute("connexion", connexion);
-        return "result";
+        return "result.html";
     }
 
 }
