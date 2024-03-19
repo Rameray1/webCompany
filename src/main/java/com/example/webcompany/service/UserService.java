@@ -15,7 +15,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public String test(@NonNull User user) {
+    public String createUser(@NonNull User user) {
         userRepository.save(user);
         return "Hello " + user.getFirstname() + " " + user.getLastname();
     }

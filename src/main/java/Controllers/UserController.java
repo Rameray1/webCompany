@@ -17,9 +17,9 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/test")
+    @GetMapping("/create")
     public String test(@NonNull @RequestBody User user) {
-        return userService.test(user);
+        return userService.createUser(user);
     }
 
 }
