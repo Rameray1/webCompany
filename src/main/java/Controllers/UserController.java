@@ -1,6 +1,6 @@
 package Controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,11 +11,14 @@ import com.example.webcompany.entity.User;
 @RestController
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("/test")
-    public String test(@RequestBody User user) {
+    public String test(@NonNull @RequestBody User user) {
         return userService.test(user);
     }
 
